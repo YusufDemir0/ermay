@@ -1,0 +1,624 @@
+[
+    {
+        "id": "ord-001",
+        "orderNumber": "ERM-2026-0142",
+        "dealerId": "DLR-001",
+        "status": "delivered",
+        "statusHistory": [
+            {
+                "status": "pending",
+                "timestamp": "2026-01-15T09:00:00Z",
+                "note": "Sipariş alındı",
+                "actor": "Sistem"
+            },
+            {
+                "status": "confirmed",
+                "timestamp": "2026-01-15T14:30:00Z",
+                "note": "Sipariş onaylandı",
+                "actor": "Satış Ekibi"
+            },
+            {
+                "status": "in_production",
+                "timestamp": "2026-01-17T08:00:00Z",
+                "note": "Üretime alındı",
+                "actor": "Üretim"
+            },
+            {
+                "status": "quality_check",
+                "timestamp": "2026-01-25T10:00:00Z",
+                "note": "Kalite kontrol tamamlandı",
+                "actor": "Kalite Kontrol"
+            },
+            {
+                "status": "shipped",
+                "timestamp": "2026-01-26T11:00:00Z",
+                "note": "Kargoya verildi – Yurtiçi Kargo",
+                "actor": "Lojistik"
+            },
+            {
+                "status": "delivered",
+                "timestamp": "2026-01-28T15:00:00Z",
+                "note": "Teslim edildi",
+                "actor": "Kargo"
+            }
+        ],
+        "items": [
+            {
+                "productId": "prod-01",
+                "productName": "Amarok Makam Takımı",
+                "variantDescription": "Antrasit / Melaminkaplama MDF",
+                "quantity": 1,
+                "unitPriceNet": 13875,
+                "totalNet": 13875
+            },
+            {
+                "productId": "prod-07",
+                "productName": "Executive Pro Yönetici Koltuğu",
+                "variantDescription": "Siyah Deri / Döner",
+                "quantity": 1,
+                "unitPriceNet": 8400,
+                "totalNet": 8400
+            }
+        ],
+        "subtotalNet": 22275,
+        "vatRate": 0.20,
+        "vatAmount": 4455,
+        "totalGross": 26730,
+        "shipping": {
+            "carrier": "Yurtiçi Kargo",
+            "trackingNumber": "YK-987654321",
+            "estimatedDelivery": "2026-01-28",
+            "address": "Maslak Mah. AOS 55. Sok. No:2 İstanbul"
+        },
+        "paymentStatus": "paid",
+        "notes": null,
+        "createdAt": "2026-01-15T09:00:00Z",
+        "updatedAt": "2026-01-28T15:00:00Z"
+    },
+    {
+        "id": "ord-002",
+        "orderNumber": "ERM-2026-0156",
+        "dealerId": "DLR-001",
+        "status": "shipped",
+        "statusHistory": [
+            {
+                "status": "pending",
+                "timestamp": "2026-02-01T10:00:00Z",
+                "note": "Sipariş alındı",
+                "actor": "Sistem"
+            },
+            {
+                "status": "confirmed",
+                "timestamp": "2026-02-01T16:00:00Z",
+                "note": "Sipariş onaylandı",
+                "actor": "Satış Ekibi"
+            },
+            {
+                "status": "in_production",
+                "timestamp": "2026-02-03T08:00:00Z",
+                "note": "Üretim başladı",
+                "actor": "Üretim"
+            },
+            {
+                "status": "quality_check",
+                "timestamp": "2026-02-14T09:00:00Z",
+                "note": "Kalite kontrolde",
+                "actor": "Kalite Kontrol"
+            },
+            {
+                "status": "shipped",
+                "timestamp": "2026-02-15T14:00:00Z",
+                "note": "Kargoya verildi",
+                "actor": "Lojistik"
+            }
+        ],
+        "items": [
+            {
+                "productId": "prod-04",
+                "productName": "Smart Personel Masası",
+                "variantDescription": "Beyaz / Metal Ayak",
+                "quantity": 10,
+                "unitPriceNet": 2625,
+                "totalNet": 26250
+            },
+            {
+                "productId": "prod-10",
+                "productName": "Comfort Plus Personel Koltuğu",
+                "variantDescription": "Gri Mesh / Döner",
+                "quantity": 10,
+                "unitPriceNet": 3150,
+                "totalNet": 31500
+            }
+        ],
+        "subtotalNet": 57750,
+        "vatRate": 0.20,
+        "vatAmount": 11550,
+        "totalGross": 69300,
+        "shipping": {
+            "carrier": "Aras Kargo",
+            "trackingNumber": "AK-123456789",
+            "estimatedDelivery": "2026-02-20",
+            "address": "Maslak Mah. AOS 55. Sok. No:2 İstanbul"
+        },
+        "paymentStatus": "pending",
+        "notes": "10 set personel masa + koltuk siparişi. Toplu teslimat.",
+        "createdAt": "2026-02-01T10:00:00Z",
+        "updatedAt": "2026-02-15T14:00:00Z"
+    },
+    {
+        "id": "ord-003",
+        "orderNumber": "ERM-2026-0163",
+        "dealerId": "DLR-001",
+        "status": "in_production",
+        "statusHistory": [
+            {
+                "status": "pending",
+                "timestamp": "2026-02-10T08:30:00Z",
+                "note": "Sipariş alındı",
+                "actor": "Sistem"
+            },
+            {
+                "status": "confirmed",
+                "timestamp": "2026-02-10T15:00:00Z",
+                "note": "Sipariş onaylandı",
+                "actor": "Satış Ekibi"
+            },
+            {
+                "status": "in_production",
+                "timestamp": "2026-02-12T08:00:00Z",
+                "note": "Kesim aşamasında",
+                "actor": "Üretim"
+            }
+        ],
+        "items": [
+            {
+                "productId": "prod-02",
+                "productName": "Prestige Yönetici Masası",
+                "variantDescription": "Ceviz / Doğal Ahşap",
+                "quantity": 2,
+                "unitPriceNet": 12600,
+                "totalNet": 25200
+            },
+            {
+                "productId": "prod-13",
+                "productName": "Metro Toplantı Masası",
+                "variantDescription": "12 Kişilik / Ceviz",
+                "quantity": 1,
+                "unitPriceNet": 10650,
+                "totalNet": 10650
+            }
+        ],
+        "subtotalNet": 35850,
+        "vatRate": 0.20,
+        "vatAmount": 7170,
+        "totalGross": 43020,
+        "shipping": {
+            "carrier": "Yurtiçi Kargo",
+            "trackingNumber": null,
+            "estimatedDelivery": "2026-03-05",
+            "address": "Maslak Mah. AOS 55. Sok. No:2 İstanbul"
+        },
+        "paymentStatus": "pending",
+        "notes": "Özel proje siparişi – 2 makam masası + 1 toplantı masası",
+        "createdAt": "2026-02-10T08:30:00Z",
+        "updatedAt": "2026-02-12T08:00:00Z"
+    },
+    {
+        "id": "ord-004",
+        "orderNumber": "ERM-2026-0171",
+        "dealerId": "DLR-001",
+        "status": "pending",
+        "statusHistory": [
+            {
+                "status": "pending",
+                "timestamp": "2026-02-18T11:00:00Z",
+                "note": "Sipariş alındı",
+                "actor": "Sistem"
+            }
+        ],
+        "items": [
+            {
+                "productId": "prod-17",
+                "productName": "Lounge Bekleme Koltuğu",
+                "variantDescription": "Bej Kumaş / Sabit",
+                "quantity": 4,
+                "unitPriceNet": 3600,
+                "totalNet": 14400
+            }
+        ],
+        "subtotalNet": 14400,
+        "vatRate": 0.20,
+        "vatAmount": 2880,
+        "totalGross": 17280,
+        "shipping": {
+            "carrier": "Aras Kargo",
+            "trackingNumber": null,
+            "estimatedDelivery": null,
+            "address": "Maslak Mah. AOS 55. Sok. No:2 İstanbul"
+        },
+        "paymentStatus": "pending",
+        "notes": null,
+        "createdAt": "2026-02-18T11:00:00Z",
+        "updatedAt": "2026-02-18T11:00:00Z"
+    },
+    {
+        "id": "ord-005",
+        "orderNumber": "ERM-2026-0098",
+        "dealerId": "DLR-001",
+        "status": "delivered",
+        "statusHistory": [
+            {
+                "status": "pending",
+                "timestamp": "2025-12-20T09:00:00Z",
+                "note": "Sipariş alındı",
+                "actor": "Sistem"
+            },
+            {
+                "status": "confirmed",
+                "timestamp": "2025-12-20T14:00:00Z",
+                "note": "Onaylandı",
+                "actor": "Satış Ekibi"
+            },
+            {
+                "status": "in_production",
+                "timestamp": "2025-12-22T08:00:00Z",
+                "note": "Üretime alındı",
+                "actor": "Üretim"
+            },
+            {
+                "status": "quality_check",
+                "timestamp": "2026-01-05T10:00:00Z",
+                "note": "KK geçti",
+                "actor": "Kalite Kontrol"
+            },
+            {
+                "status": "shipped",
+                "timestamp": "2026-01-06T09:00:00Z",
+                "note": "Kargoya verildi",
+                "actor": "Lojistik"
+            },
+            {
+                "status": "delivered",
+                "timestamp": "2026-01-08T16:00:00Z",
+                "note": "Teslim edildi",
+                "actor": "Kargo"
+            }
+        ],
+        "items": [
+            {
+                "productId": "prod-20",
+                "productName": "HomeDesk Ev Ofis Masası",
+                "variantDescription": "Doğal Meşe / Metal",
+                "quantity": 5,
+                "unitPriceNet": 4725,
+                "totalNet": 23625
+            }
+        ],
+        "subtotalNet": 23625,
+        "vatRate": 0.20,
+        "vatAmount": 4725,
+        "totalGross": 28350,
+        "shipping": {
+            "carrier": "Yurtiçi Kargo",
+            "trackingNumber": "YK-111222333",
+            "estimatedDelivery": "2026-01-08",
+            "address": "Maslak Mah. AOS 55. Sok. No:2 İstanbul"
+        },
+        "paymentStatus": "paid",
+        "notes": null,
+        "createdAt": "2025-12-20T09:00:00Z",
+        "updatedAt": "2026-01-08T16:00:00Z"
+    },
+    {
+        "id": "ord-006",
+        "orderNumber": "ERM-2026-0087",
+        "dealerId": "DLR-001",
+        "status": "delivered",
+        "statusHistory": [
+            {
+                "status": "pending",
+                "timestamp": "2025-12-10T10:00:00Z",
+                "note": "Sipariş alındı",
+                "actor": "Sistem"
+            },
+            {
+                "status": "confirmed",
+                "timestamp": "2025-12-10T15:00:00Z",
+                "note": "Onaylandı",
+                "actor": "Satış"
+            },
+            {
+                "status": "in_production",
+                "timestamp": "2025-12-12T08:00:00Z",
+                "note": "Üretimde",
+                "actor": "Üretim"
+            },
+            {
+                "status": "quality_check",
+                "timestamp": "2025-12-22T10:00:00Z",
+                "note": "KK tamamlandı",
+                "actor": "KK"
+            },
+            {
+                "status": "shipped",
+                "timestamp": "2025-12-23T09:00:00Z",
+                "note": "Kargoya verildi",
+                "actor": "Lojistik"
+            },
+            {
+                "status": "delivered",
+                "timestamp": "2025-12-26T14:00:00Z",
+                "note": "Teslim edildi",
+                "actor": "Kargo"
+            }
+        ],
+        "items": [
+            {
+                "productId": "prod-01",
+                "productName": "Amarok Makam Takımı",
+                "variantDescription": "Ceviz / MDF",
+                "quantity": 3,
+                "unitPriceNet": 13875,
+                "totalNet": 41625
+            }
+        ],
+        "subtotalNet": 41625,
+        "vatRate": 0.20,
+        "vatAmount": 8325,
+        "totalGross": 49950,
+        "shipping": {
+            "carrier": "Yurtiçi Kargo",
+            "trackingNumber": "YK-444555666",
+            "estimatedDelivery": "2025-12-26",
+            "address": "Maslak Mah. AOS 55. Sok. No:2 İstanbul"
+        },
+        "paymentStatus": "paid",
+        "notes": null,
+        "createdAt": "2025-12-10T10:00:00Z",
+        "updatedAt": "2025-12-26T14:00:00Z"
+    },
+    {
+        "id": "ord-007",
+        "orderNumber": "ERM-2026-0112",
+        "dealerId": "DLR-001",
+        "status": "delivered",
+        "statusHistory": [
+            {
+                "status": "pending",
+                "timestamp": "2026-01-02T09:00:00Z",
+                "note": "Sipariş alındı",
+                "actor": "Sistem"
+            },
+            {
+                "status": "confirmed",
+                "timestamp": "2026-01-02T14:00:00Z",
+                "note": "Onaylandı",
+                "actor": "Satış"
+            },
+            {
+                "status": "in_production",
+                "timestamp": "2026-01-04T08:00:00Z",
+                "note": "Üretimde",
+                "actor": "Üretim"
+            },
+            {
+                "status": "quality_check",
+                "timestamp": "2026-01-10T10:00:00Z",
+                "note": "KK tamamlandı",
+                "actor": "KK"
+            },
+            {
+                "status": "shipped",
+                "timestamp": "2026-01-11T09:00:00Z",
+                "note": "Kargoya verildi",
+                "actor": "Lojistik"
+            },
+            {
+                "status": "delivered",
+                "timestamp": "2026-01-13T15:00:00Z",
+                "note": "Teslim edildi",
+                "actor": "Kargo"
+            }
+        ],
+        "items": [
+            {
+                "productId": "prod-14",
+                "productName": "Conference Elite Toplantı Koltuğu",
+                "variantDescription": "Siyah Deri / Sabit",
+                "quantity": 12,
+                "unitPriceNet": 2850,
+                "totalNet": 34200
+            }
+        ],
+        "subtotalNet": 34200,
+        "vatRate": 0.20,
+        "vatAmount": 6840,
+        "totalGross": 41040,
+        "shipping": {
+            "carrier": "Aras Kargo",
+            "trackingNumber": "AK-777888999",
+            "estimatedDelivery": "2026-01-13",
+            "address": "Maslak Mah. AOS 55. Sok. No:2 İstanbul"
+        },
+        "paymentStatus": "paid",
+        "notes": "12 adet toplantı koltuğu",
+        "createdAt": "2026-01-02T09:00:00Z",
+        "updatedAt": "2026-01-13T15:00:00Z"
+    },
+    {
+        "id": "ord-008",
+        "orderNumber": "ERM-2026-0128",
+        "dealerId": "DLR-001",
+        "status": "delivered",
+        "statusHistory": [
+            {
+                "status": "pending",
+                "timestamp": "2026-01-08T09:00:00Z",
+                "note": "Sipariş alındı",
+                "actor": "Sistem"
+            },
+            {
+                "status": "confirmed",
+                "timestamp": "2026-01-08T14:00:00Z",
+                "note": "Onaylandı",
+                "actor": "Satış"
+            },
+            {
+                "status": "in_production",
+                "timestamp": "2026-01-10T08:00:00Z",
+                "note": "Üretimde",
+                "actor": "Üretim"
+            },
+            {
+                "status": "shipped",
+                "timestamp": "2026-01-18T09:00:00Z",
+                "note": "Kargoya verildi",
+                "actor": "Lojistik"
+            },
+            {
+                "status": "delivered",
+                "timestamp": "2026-01-20T14:00:00Z",
+                "note": "Teslim",
+                "actor": "Kargo"
+            }
+        ],
+        "items": [
+            {
+                "productId": "prod-18",
+                "productName": "Reception Bekleme Seti",
+                "variantDescription": "Gri Kumaş / Krom",
+                "quantity": 2,
+                "unitPriceNet": 6300,
+                "totalNet": 12600
+            }
+        ],
+        "subtotalNet": 12600,
+        "vatRate": 0.20,
+        "vatAmount": 2520,
+        "totalGross": 15120,
+        "shipping": {
+            "carrier": "Yurtiçi Kargo",
+            "trackingNumber": "YK-333444555",
+            "estimatedDelivery": "2026-01-20",
+            "address": "Maslak Mah. AOS 55. Sok. No:2 İstanbul"
+        },
+        "paymentStatus": "paid",
+        "notes": null,
+        "createdAt": "2026-01-08T09:00:00Z",
+        "updatedAt": "2026-01-20T14:00:00Z"
+    },
+    {
+        "id": "ord-009",
+        "orderNumber": "ERM-2026-0178",
+        "dealerId": "DLR-001",
+        "status": "quality_check",
+        "statusHistory": [
+            {
+                "status": "pending",
+                "timestamp": "2026-02-15T09:00:00Z",
+                "note": "Sipariş alındı",
+                "actor": "Sistem"
+            },
+            {
+                "status": "confirmed",
+                "timestamp": "2026-02-15T15:00:00Z",
+                "note": "Onaylandı",
+                "actor": "Satış"
+            },
+            {
+                "status": "in_production",
+                "timestamp": "2026-02-17T08:00:00Z",
+                "note": "Üretimde",
+                "actor": "Üretim"
+            },
+            {
+                "status": "quality_check",
+                "timestamp": "2026-02-22T10:00:00Z",
+                "note": "Kalite kontrolde",
+                "actor": "KK"
+            }
+        ],
+        "items": [
+            {
+                "productId": "prod-23",
+                "productName": "Proje Masası Özel",
+                "variantDescription": "Özel Ölçü / Meşe",
+                "quantity": 1,
+                "unitPriceNet": 18000,
+                "totalNet": 18000
+            },
+            {
+                "productId": "prod-07",
+                "productName": "Executive Pro Yönetici Koltuğu",
+                "variantDescription": "Kahve Deri / Döner",
+                "quantity": 1,
+                "unitPriceNet": 8400,
+                "totalNet": 8400
+            }
+        ],
+        "subtotalNet": 26400,
+        "vatRate": 0.20,
+        "vatAmount": 5280,
+        "totalGross": 31680,
+        "shipping": {
+            "carrier": "Yurtiçi Kargo",
+            "trackingNumber": null,
+            "estimatedDelivery": "2026-02-28",
+            "address": "Maslak Mah. AOS 55. Sok. No:2 İstanbul"
+        },
+        "paymentStatus": "pending",
+        "notes": "Özel üretim masa + yönetici koltuğu seti",
+        "createdAt": "2026-02-15T09:00:00Z",
+        "updatedAt": "2026-02-22T10:00:00Z"
+    },
+    {
+        "id": "ord-010",
+        "orderNumber": "ERM-2026-0055",
+        "dealerId": "DLR-001",
+        "status": "cancelled",
+        "statusHistory": [
+            {
+                "status": "pending",
+                "timestamp": "2025-11-28T10:00:00Z",
+                "note": "Sipariş alındı",
+                "actor": "Sistem"
+            },
+            {
+                "status": "confirmed",
+                "timestamp": "2025-11-28T16:00:00Z",
+                "note": "Onaylandı",
+                "actor": "Satış"
+            },
+            {
+                "status": "cancelled",
+                "timestamp": "2025-12-02T11:00:00Z",
+                "note": "Müşteri iptal talebi",
+                "actor": "Bayi"
+            }
+        ],
+        "items": [
+            {
+                "productId": "prod-05",
+                "productName": "Ergonomik Personel Koltuğu",
+                "variantDescription": "Siyah Mesh / Kaldıraçlı",
+                "quantity": 20,
+                "unitPriceNet": 3150,
+                "totalNet": 63000
+            }
+        ],
+        "subtotalNet": 63000,
+        "vatRate": 0.20,
+        "vatAmount": 12600,
+        "totalGross": 75600,
+        "shipping": {
+            "carrier": "Yurtiçi Kargo",
+            "trackingNumber": null,
+            "estimatedDelivery": null,
+            "address": "Maslak Mah. AOS 55. Sok. No:2 İstanbul"
+        },
+        "paymentStatus": "pending",
+        "notes": "Müşteri tarafından iptal edildi",
+        "createdAt": "2025-11-28T10:00:00Z",
+        "updatedAt": "2025-12-02T11:00:00Z"
+    }
+]

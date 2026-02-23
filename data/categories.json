@@ -1,0 +1,98 @@
+[
+  {
+    "id": "cat-1",
+    "slug": "makam-mobilyalari",
+    "name": "Makam Mobilyaları",
+    "description": "Yönetici makam odaları için premium mobilya setleri. Prestijli tasarımlar ve üstün kalite.",
+    "image": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
+    "parentId": null,
+    "productCount": 5,
+    "order": 1,
+    "icon": "Briefcase",
+    "featured": true,
+    "meta": {
+      "title": "Makam Mobilyaları | Ermay Mobilya",
+      "description": "Yönetici makam odası mobilyaları. Premium makam masaları, koltuklar ve takımlar."
+    }
+  },
+  {
+    "id": "cat-2",
+    "slug": "personel-masalari",
+    "name": "Personel Masaları",
+    "description": "Ofis çalışanları için ergonomik ve fonksiyonel masalar. Verimli çalışma alanları.",
+    "image": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800&q=80",
+    "parentId": null,
+    "productCount": 5,
+    "order": 2,
+    "icon": "Monitor",
+    "featured": true,
+    "meta": {
+      "title": "Personel Masaları | Ermay Mobilya",
+      "description": "Ergonomik personel çalışma masaları. Kompakt ve fonksiyonel ofis masaları."
+    }
+  },
+  {
+    "id": "cat-3",
+    "slug": "toplanti-mobilyalari",
+    "name": "Toplantı Mobilyaları",
+    "description": "Her ölçekte toplantı odası çözümleri. Modern ve profesyonel toplantı masaları.",
+    "image": "https://images.unsplash.com/photo-1431540015159-0f9673632326?w=800&q=80",
+    "parentId": null,
+    "productCount": 4,
+    "order": 3,
+    "icon": "Users",
+    "featured": true,
+    "meta": {
+      "title": "Toplantı Mobilyaları | Ermay Mobilya",
+      "description": "Toplantı masaları ve koltukları. Profesyonel toplantı odası mobilyaları."
+    }
+  },
+  {
+    "id": "cat-4",
+    "slug": "bekleme-koltuklari",
+    "name": "Bekleme Koltukları",
+    "description": "Konforlu ve şık bekleme alanı mobilyaları. Misafirlerinizi etkileyecek tasarımlar.",
+    "image": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80",
+    "parentId": null,
+    "productCount": 4,
+    "order": 4,
+    "icon": "Sofa",
+    "featured": true,
+    "meta": {
+      "title": "Bekleme Koltukları | Ermay Mobilya",
+      "description": "Bekleme alanı koltukları ve kanepe setleri. Konforlu ve şık tasarımlar."
+    }
+  },
+  {
+    "id": "cat-5",
+    "slug": "ev-ofisi",
+    "name": "Ev Ofisi",
+    "description": "Evinize uygun çalışma alanı çözümleri. Hibrit çalışma düzeni için ideal setler.",
+    "image": "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=800&q=80",
+    "parentId": null,
+    "productCount": 4,
+    "order": 5,
+    "icon": "Home",
+    "featured": true,
+    "meta": {
+      "title": "Ev Ofisi Mobilyaları | Ermay Mobilya",
+      "description": "Ev ofis masaları, kitaplıklar ve çalışma setleri. Küçük alanlar için büyük çözümler."
+    }
+  },
+  {
+    "id": "cat-6",
+    "slug": "ozel-uretim",
+    "name": "Özel Üretim",
+    "description": "Projenize özel ölçü ve tasarım çözümleri. İhtiyacınıza göre üretim.",
+    "image": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80",
+    "parentId": null,
+    "productCount": 2,
+    "order": 6,
+    "icon": "Settings",
+    "featured": false,
+    "meta": {
+      "title": "Özel Üretim Mobilya | Ermay Mobilya",
+      "description": "Projenize özel mobilya üretimi. İstediğiniz ölçü ve tasarımda ofis mobilyaları."
+    }
+  }
+]

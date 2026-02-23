@@ -1,0 +1,220 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Ermay Mobilya Design System – Warm Minimalism */
+  --navy: #1B3A6B;
+  --gold: #C8A96E;
+  --cream: #FAF7F2;
+  --sand: #F0E9DC;
+  --charcoal: #1A1A1A;
+  --medium-gray: #6B7280;
+  --light-gray: #E5E7EB;
+  --sage: #7C9B7A;
+  --terracotta: #C17B5A;
+  --alert-red: #DC3545;
+  --success-green: #28A745;
+
+  /* Semantic tokens mapped to Ermay palette */
+  --background: var(--cream);
+  --foreground: var(--charcoal);
+  --card: #FFFFFF;
+  --card-foreground: var(--charcoal);
+  --popover: #FFFFFF;
+  --popover-foreground: var(--charcoal);
+  --primary: var(--navy);
+  --primary-foreground: #FFFFFF;
+  --secondary: var(--sand);
+  --secondary-foreground: var(--charcoal);
+  --muted: var(--sand);
+  --muted-foreground: var(--medium-gray);
+  --accent: var(--gold);
+  --accent-foreground: #FFFFFF;
+  --destructive: var(--alert-red);
+  --destructive-foreground: #FFFFFF;
+  --border: var(--light-gray);
+  --input: var(--light-gray);
+  --ring: var(--gold);
+  --radius: 0.75rem;
+
+  /* Chart colors */
+  --chart-1: var(--navy);
+  --chart-2: var(--gold);
+  --chart-3: var(--sage);
+  --chart-4: var(--terracotta);
+  --chart-5: var(--sand);
+
+  /* Sidebar */
+  --sidebar: var(--navy);
+  --sidebar-foreground: #FFFFFF;
+  --sidebar-primary: var(--gold);
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #234B8A;
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: #2D4A7A;
+  --sidebar-ring: var(--gold);
+}
+
+@theme inline {
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-mono: 'Geist Mono', monospace;
+
+  --color-navy: #1B3A6B;
+  --color-gold: #C8A96E;
+  --color-cream: #FAF7F2;
+  --color-sand: #F0E9DC;
+  --color-charcoal: #1A1A1A;
+  --color-medium-gray: #6B7280;
+  --color-light-gray: #E5E7EB;
+  --color-sage: #7C9B7A;
+  --color-terracotta: #C17B5A;
+  --color-alert-red: #DC3545;
+  --color-success-green: #28A745;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/* B2B Dark Theme */
+.dark {
+  --background: #0F172A;
+  --foreground: #E2E8F0;
+  --card: #1E293B;
+  --card-foreground: #E2E8F0;
+  --popover: #1E293B;
+  --popover-foreground: #E2E8F0;
+  --primary: var(--gold);
+  --primary-foreground: #0F172A;
+  --secondary: #334155;
+  --secondary-foreground: #E2E8F0;
+  --muted: #1E293B;
+  --muted-foreground: #94A3B8;
+  --accent: var(--gold);
+  --accent-foreground: #0F172A;
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+  --border: #334155;
+  --input: #334155;
+  --ring: var(--gold);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  ::selection {
+    background-color: rgba(200, 169, 110, 0.3);
+    color: var(--charcoal);
+  }
+}
+
+/* Custom utility classes for Ermay */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  .glass {
+    backdrop-filter: blur(20px) saturate(180%);
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+  }
+  .glass-dark {
+    backdrop-filter: blur(20px) saturate(180%);
+    background: rgba(27, 58, 107, 0.85);
+    border: 1px solid rgba(45, 74, 122, 0.5);
+  }
+  .shadow-soft-sm {
+    box-shadow: 0 2px 12px rgba(27, 58, 107, 0.06);
+  }
+  .shadow-soft-md {
+    box-shadow: 0 8px 32px rgba(27, 58, 107, 0.10);
+  }
+  .shadow-soft-lg {
+    box-shadow: 0 20px 60px rgba(27, 58, 107, 0.14);
+  }
+  .shadow-gold-glow {
+    box-shadow: 0 0 0 3px rgba(200, 169, 110, 0.3);
+  }
+  .shadow-card-hover {
+    box-shadow: 0 24px 64px rgba(27, 58, 107, 0.18), 0 0 0 1px rgba(200, 169, 110, 0.2);
+  }
+  .transition-warm {
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .hover-lift {
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease;
+  }
+  .hover-lift:hover {
+    transform: translateY(-4px);
+  }
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Scrollbar styling */
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: var(--medium-gray);
+    border-radius: 3px;
+  }
+}
