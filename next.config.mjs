@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
+  basePath: '/ermay',
   images: {
     unoptimized: true,
     remotePatterns: [
