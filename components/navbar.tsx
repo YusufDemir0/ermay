@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
+import productsData from "@/data/products.json"
 import { motion, AnimatePresence } from "framer-motion"
 import {
   Search,
@@ -59,6 +61,16 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [megaMenuOpen, setMegaMenuOpen] = useState<string | null>(null)
+  const [searchOpen, setSearchOpen] = useState(false)
+  const [searchQuery, setSearchQuery] = useState("")
+
+  const rawSearchResults = searchQuery.trim().length >= 2
+    ? productsData.filter(p =>
+      p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      p.categoryName.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      p.tags.some(t => t.toLowerCase().includes(searchQuery.toLowerCase()))
+    ).slice(0, 5)
+    : []
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 80)
@@ -93,7 +105,7 @@ export default function Navbar() {
       >
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
+          <Link href="/" className={`flex items-center gap-2 transition-opacity duration-300 ${searchOpen ? "opacity-0 lg:opacity-100 pointer-events-none lg:pointer-events-auto" : "opacity-100"}`}>
             <div className="flex flex-col">
               <span className="font-serif text-2xl font-bold tracking-tight text-navy">
                 ERMAY
@@ -105,7 +117,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className={`hidden lg:flex items-center gap-8 transition-opacity duration-300 ${searchOpen ? "opacity-0 pointer-events-none" : "opacity-100"}`}>
             {menuItems.map((item) => (
               <div
                 key={item.label}
@@ -179,10 +191,85 @@ export default function Navbar() {
             ))}
           </div>
 
+          {/* Inline Search Bar */}
+          <AnimatePresence>
+            {searchOpen && (
+              <motion.div
+                initial={{ opacity: 0, width: "0%", scale: 0.95 }}
+                animate={{ opacity: 1, width: "100%", maxWidth: "600px", scale: 1 }}
+                exit={{ opacity: 0, width: "0%", scale: 0.95 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className="absolute left-1/2 flex h-12 -translate-x-1/2 items-center rounded-2xl bg-sand px-4 shadow-inner"
+                style={{ zIndex: 50 }}
+              >
+                <Search className="h-5 w-5 text-medium-gray shrink-0" />
+                <input
+                  autoFocus
+                  type="text"
+                  placeholder="Urun, kategori veya koleksiyon arayin..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value.replace(/[<>]/g, ""))}
+                  className="mx-3 flex-1 bg-transparent text-sm font-medium text-charcoal outline-none placeholder:text-medium-gray min-w-0"
+                />
+                <button
+                  onClick={() => {
+                    setSearchOpen(false)
+                    setSearchQuery("")
+                  }}
+                  className="rounded-full p-1 hover:bg-light-gray shrink-0 transition-colors"
+                >
+                  <X className="h-5 w-5 text-charcoal" />
+                </button>
+
+                {/* Inline Search Results Dropdown */}
+                <AnimatePresence>
+                  {searchQuery.length >= 2 && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      className="absolute left-0 right-0 top-[120%] z-50 rounded-2xl bg-white p-4 shadow-soft-xl border border-light-gray/50"
+                    >
+                      <div className="flex flex-col gap-3">
+                        {rawSearchResults.length > 0 ? (
+                          rawSearchResults.map((prod) => (
+                            <Link
+                              key={prod.id}
+                              href={`/urunler/${prod.slug}`}
+                              onClick={() => {
+                                setSearchOpen(false)
+                                setSearchQuery("")
+                              }}
+                              className="flex items-center gap-4 rounded-xl p-2 transition-colors hover:bg-sand"
+                            >
+                              <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-lg border border-light-gray bg-white">
+                                <Image src={prod.images[0]?.url || ""} alt={prod.name} fill className="object-cover" />
+                              </div>
+                              <div className="min-w-0 flex-1">
+                                <p className="truncate text-[10px] font-semibold uppercase tracking-wider text-gold">{prod.categoryName}</p>
+                                <h4 className="truncate text-sm font-semibold text-charcoal">{prod.name}</h4>
+                              </div>
+                              <div className="shrink-0 text-right">
+                                <p className="text-sm font-bold text-navy">{prod.variants[0].priceB2C.toLocaleString("tr-TR")} TL</p>
+                              </div>
+                            </Link>
+                          ))
+                        ) : (
+                          <p className="py-4 text-center text-sm text-medium-gray">Sonuc bulunamadi.</p>
+                        )}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
           {/* Actions */}
-          <div className="flex items-center gap-3">
+          <div className={`flex items-center gap-3 transition-opacity duration-300 ${searchOpen ? "opacity-0 pointer-events-none" : "opacity-100"}`}>
             <button
               aria-label="Ara"
+              onClick={() => setSearchOpen(true)}
               className="rounded-xl p-2.5 text-charcoal transition-colors hover:bg-sand hover:text-navy"
             >
               <Search className="h-5 w-5" />
@@ -219,74 +306,76 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <AnimatePresence>
-        {mobileOpen && (
-          <>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 z-[60] bg-charcoal/40"
-              onClick={() => setMobileOpen(false)}
-            />
-            <motion.div
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              className="fixed right-0 top-0 z-[70] h-full w-[85%] max-w-sm bg-cream shadow-soft-lg overflow-y-auto"
-            >
-              <div className="flex items-center justify-between border-b border-light-gray px-6 py-4">
-                <span className="font-serif text-xl font-bold text-navy">
-                  ERMAY
-                </span>
-                <button
-                  aria-label="Kapat"
-                  onClick={() => setMobileOpen(false)}
-                  className="rounded-xl p-2 text-charcoal hover:bg-sand"
-                >
-                  <X className="h-5 w-5" />
-                </button>
-              </div>
-              <div className="flex flex-col px-6 py-6 gap-1">
-                {menuItems.map((item) => (
-                  <div key={item.label}>
-                    <Link
-                      href={item.href}
-                      onClick={() => setMobileOpen(false)}
-                      className="flex items-center justify-between rounded-xl px-3 py-3 text-base font-medium text-charcoal transition-colors hover:bg-sand hover:text-navy"
-                    >
-                      {item.label}
-                      {item.hasMegaMenu && (
-                        <ChevronDown className="h-4 w-4 text-medium-gray" />
-                      )}
-                    </Link>
-                    {item.hasMegaMenu &&
-                      item.megaMenu?.map((col) => (
-                        <div key={col.title} className="pl-4 pb-2">
-                          <p className="px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-gold">
-                            {col.title}
-                          </p>
-                          {col.items.map((sub) => (
-                            <Link
-                              key={sub.label}
-                              href={sub.href}
-                              onClick={() => setMobileOpen(false)}
-                              className="block rounded-lg px-3 py-1.5 text-sm text-medium-gray hover:text-navy"
-                            >
-                              {sub.label}
-                            </Link>
-                          ))}
-                        </div>
-                      ))}
-                  </div>
-                ))}
-              </div>
-              <div className="border-t border-light-gray px-6 py-4">
-              </div>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
+        {
+          mobileOpen && (
+            <>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="fixed inset-0 z-[60] bg-charcoal/40"
+                onClick={() => setMobileOpen(false)}
+              />
+              <motion.div
+                initial={{ x: "100%" }}
+                animate={{ x: 0 }}
+                exit={{ x: "100%" }}
+                transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                className="fixed right-0 top-0 z-[70] h-full w-[85%] max-w-sm bg-cream shadow-soft-lg overflow-y-auto"
+              >
+                <div className="flex items-center justify-between border-b border-light-gray px-6 py-4">
+                  <span className="font-serif text-xl font-bold text-navy">
+                    ERMAY
+                  </span>
+                  <button
+                    aria-label="Kapat"
+                    onClick={() => setMobileOpen(false)}
+                    className="rounded-xl p-2 text-charcoal hover:bg-sand"
+                  >
+                    <X className="h-5 w-5" />
+                  </button>
+                </div>
+                <div className="flex flex-col px-6 py-6 gap-1">
+                  {menuItems.map((item) => (
+                    <div key={item.label}>
+                      <Link
+                        href={item.href}
+                        onClick={() => setMobileOpen(false)}
+                        className="flex items-center justify-between rounded-xl px-3 py-3 text-base font-medium text-charcoal transition-colors hover:bg-sand hover:text-navy"
+                      >
+                        {item.label}
+                        {item.hasMegaMenu && (
+                          <ChevronDown className="h-4 w-4 text-medium-gray" />
+                        )}
+                      </Link>
+                      {item.hasMegaMenu &&
+                        item.megaMenu?.map((col) => (
+                          <div key={col.title} className="pl-4 pb-2">
+                            <p className="px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-gold">
+                              {col.title}
+                            </p>
+                            {col.items.map((sub) => (
+                              <Link
+                                key={sub.label}
+                                href={sub.href}
+                                onClick={() => setMobileOpen(false)}
+                                className="block rounded-lg px-3 py-1.5 text-sm text-medium-gray hover:text-navy"
+                              >
+                                {sub.label}
+                              </Link>
+                            ))}
+                          </div>
+                        ))}
+                    </div>
+                  ))}
+                </div>
+                <div className="border-t border-light-gray px-6 py-4">
+                </div>
+              </motion.div>
+            </>
+          )
+        }
+      </AnimatePresence >
     </>
   )
 }

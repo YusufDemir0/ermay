@@ -23,6 +23,7 @@ export interface ProductVariant {
     oldPrice: number | null;
     stock: number;
     stockStatus: 'in_stock' | 'low_stock' | 'out_of_stock' | 'on_order';
+    imageUrl?: string;
 }
 
 export interface ProductSpecs {

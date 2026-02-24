@@ -7,7 +7,6 @@ import FeaturedProducts from "@/components/home/featured-products"
 import WhyErmay from "@/components/home/why-ermay"
 import Testimonials from "@/components/home/testimonials"
 import BlogPreview from "@/components/home/blog-preview"
-import DealerCTA from "@/components/home/dealer-cta"
 import Collaborations from "@/components/home/collaborations"
 
 export default function Home() {
@@ -23,7 +22,6 @@ export default function Home() {
         <Testimonials />
         <Collaborations />
         <BlogPreview />
-        <DealerCTA />
       </main>
       <Footer />
     </>

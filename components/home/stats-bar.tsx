@@ -7,7 +7,7 @@ const stats = [
   { number: 27, suffix: "", unit: "Yil", description: "Uretim Deneyimi" },
   { number: 500, suffix: "+", unit: "Urun", description: "Aktif Katalog" },
   { number: 10000, suffix: "+", unit: "Musteri", description: "Turkiye Genelinde" },
-  { number: 50, suffix: "+", unit: "Bayi", description: "Bayi Agi" },
+  { number: 50, suffix: "+", unit: "Şube", description: "Deneyim Merkezi" },
   { number: 100, suffix: "%", unit: "Yerli", description: "Uretim" },
 ]
 

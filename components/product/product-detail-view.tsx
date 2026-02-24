@@ -56,7 +56,7 @@ export default function ProductDetailView({ product }: { product: (typeof produc
                     <div className="space-y-4">
                         <div className="relative aspect-square overflow-hidden rounded-2xl bg-white shadow-soft-md">
                             <Image
-                                src={product.images[activeImage]?.url || 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800&q=80'}
+                                src={(activeImage === 0 && (variant as any).imageUrl) ? (variant as any).imageUrl : (product.images[activeImage]?.url || 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800&q=80')}
                                 alt={product.images[activeImage]?.alt || product.name}
                                 fill
                                 className="object-cover"
@@ -91,7 +91,7 @@ export default function ProductDetailView({ product }: { product: (typeof produc
                                         className={`relative h-20 w-20 overflow-hidden rounded-lg border-2 transition-warm ${activeImage === i ? 'border-gold shadow-gold-glow' : 'border-transparent hover:border-light-gray'
                                             }`}
                                     >
-                                        <Image src={img.url} alt={img.alt} fill className="object-cover" />
+                                        <Image src={(i === 0 && (variant as any).imageUrl) ? (variant as any).imageUrl : img.url} alt={img.alt} fill className="object-cover" />
                                     </button>
                                 ))}
                             </div>
@@ -135,7 +135,7 @@ export default function ProductDetailView({ product }: { product: (typeof produc
                                     {product.variants.map((v, i) => (
                                         <button
                                             key={v.id}
-                                            onClick={() => { setSelectedVariant(i); setQuantity(1) }}
+                                            onClick={() => { setSelectedVariant(i); setQuantity(1); setActiveImage(0); }}
                                             className={`flex items-center gap-2 rounded-xl border-2 px-4 py-2 transition-warm ${selectedVariant === i ? 'border-gold bg-gold/5 shadow-gold-glow' : 'border-light-gray hover:border-gold/50'
                                                 }`}
                                         >

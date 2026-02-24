@@ -4,13 +4,14 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
 import { ChevronDown } from "lucide-react"
+import heroBg from "@/public/mock/hero-bg.jpg"
 
 export default function HeroSection() {
   return (
     <section className="relative flex min-h-[100vh] items-center justify-center overflow-hidden">
       {/* Background Image */}
       <Image
-        src="/mock/hero-bg.jpg"
+        src={heroBg}
         alt="Ermay Mobilya premium ofis mekanı"
         fill
         className="object-cover"

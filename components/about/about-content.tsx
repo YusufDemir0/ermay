@@ -3,11 +3,12 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 import { Award, Shield, CheckCircle2 } from "lucide-react"
+import heroBg from "@/public/mock/hero-bg.jpg"
 
 const timeline = [
   { year: 1999, title: "Kurulus", description: "Kocaeli'nde kucuk bir atolyeyle yolculuk basladi" },
   { year: 2005, title: "Fabrika Genislemesi", description: "Uretim kapasitesi 3 katina cikti" },
-  { year: 2010, title: "Bayi Agi", description: "Turkiye genelinde 50+ bayi" },
+  { year: 2010, title: "Deneyim Merkezleri", description: "Turkiye genelinde 50+ sube" },
   { year: 2018, title: "Urun Yelpazesi", description: "Ev mobilyalari segmentine giris" },
   { year: 2024, title: "Dijital Donusum", description: "ERP ve e-ticaret platformuna gecis" },
   { year: 2026, title: "Yeni Platform", description: "B2B + B2C entegre dijital ekosistem" },
@@ -28,7 +29,7 @@ export default function AboutContent() {
       {/* Hero */}
       <section className="relative flex items-center justify-center overflow-hidden py-32 lg:py-40">
         <Image
-          src="/mock/hero-bg.jpg"
+          src={heroBg}
           alt="Ermay Mobilya fabrika"
           fill
           className="object-cover"
@@ -113,9 +114,8 @@ export default function AboutContent() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.08 }}
-                  className={`relative flex items-start gap-6 md:gap-0 ${
-                    i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                  }`}
+                  className={`relative flex items-start gap-6 md:gap-0 ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                    }`}
                 >
                   {/* Dot */}
                   <div className="absolute left-6 top-1 z-10 flex h-3 w-3 -translate-x-1/2 items-center justify-center md:left-1/2">

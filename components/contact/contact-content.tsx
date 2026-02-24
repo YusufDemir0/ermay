@@ -268,7 +268,7 @@ export function ContactContent() {
                         <option value="">Konu Seciniz</option>
                         <option value="teklif">Teklif Talebi</option>
                         <option value="bilgi">Bilgi Talebi</option>
-                        <option value="bayi">Bayi Basvurusu</option>
+                        <option value="randevu">Mimari Randevu</option>
                         <option value="diger">Diger</option>
                       </select>
                     </div>
