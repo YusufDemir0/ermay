@@ -19,10 +19,9 @@ const footerLinks = {
     title: "Kurumsal",
     links: [
       { label: "Hakkimizda", href: "/hakkimizda" },
-      { label: "Projelerimiz", href: "/hakkimizda" },
+      { label: "Subelerimiz", href: "/subelerimiz" },
       { label: "Blog", href: "/blog" },
       { label: "Kariyer", href: "/kariyer" },
-      { label: "Bayi Basvurusu", href: "/bayi" },
     ],
   },
   destek: {

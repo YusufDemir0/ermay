@@ -41,12 +41,6 @@ export default function DealerCTA() {
               Bayi Basvurusu Yap
               <ArrowRight className="h-4 w-4" />
             </Link>
-            <Link
-              href="/b2b"
-              className="rounded-2xl border border-primary-foreground/30 px-8 py-4 text-base font-medium text-primary-foreground/80 transition-all hover:border-gold hover:text-gold"
-            >
-              Bayi Portali Giris
-            </Link>
           </div>
 
           {/* Trust points */}

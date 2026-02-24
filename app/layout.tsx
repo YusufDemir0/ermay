@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import { Playfair_Display, DM_Sans } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import PromoPopup from '@/components/marketing/promo-popup'
+import FloatingChatbot from '@/components/chatbot/floating-chatbot'
+import JsonLd from '@/components/seo/json-ld'
 import './globals.css'
 
 const playfair = Playfair_Display({
@@ -30,8 +33,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="tr" className={`${playfair.variable} ${dmSans.variable}`}>
-      <body className="font-sans antialiased">
+      <head>
+        <JsonLd />
+      </head>
+      <body className="font-sans antialiased relative">
         {children}
+        <PromoPopup />
+        <FloatingChatbot />
         <Analytics />
       </body>
     </html>

@@ -59,6 +59,7 @@
     "sonner": "^1.7.1",
     "swiper": "^12.1.2",
     "tailwind-merge": "^3.3.1",
+    "turkey-map-react": "^2.0.3",
     "vaul": "^1.1.2",
     "xlsx": "^0.18.5",
     "zod": "^3.24.1",

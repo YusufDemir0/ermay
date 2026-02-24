@@ -64,12 +64,6 @@ export default function HeroSection() {
           >
             Koleksiyonu Kesfet
           </Link>
-          <Link
-            href="/b2b"
-            className="rounded-2xl border border-primary-foreground/30 px-8 py-4 text-base font-medium text-primary-foreground/80 backdrop-blur-sm transition-all hover:border-primary-foreground/60 hover:text-primary-foreground"
-          >
-            Bayi Girisi
-          </Link>
         </motion.div>
 
         {/* Stats bar */}

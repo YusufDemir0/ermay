@@ -50,7 +50,7 @@ const menuItems = [
     ],
   },
   { label: "Hakkimizda", href: "/hakkimizda" },
-  { label: "Projelerimiz", href: "/hakkimizda" },
+  { label: "Subelerimiz", href: "/subelerimiz" },
   { label: "Blog", href: "/blog" },
   { label: "Iletisim", href: "/iletisim" },
 ]
@@ -80,10 +80,6 @@ export default function Navbar() {
             <span>Turkiye Geneli Ucretsiz Kargo (500TL Uzeri)</span>
           </div>
           <div className="flex items-center gap-4">
-            <Link href="/b2b" className="flex items-center gap-1.5 text-gold hover:text-gold/80 transition-colors">
-              <Building2 className="h-3 w-3" />
-              Bayi Girisi
-            </Link>
           </div>
         </div>
       </div>
@@ -91,8 +87,8 @@ export default function Navbar() {
       {/* Main Navbar */}
       <header
         className={`sticky top-0 z-50 transition-all duration-300 ${scrolled
-            ? "glass shadow-soft-md"
-            : "bg-cream"
+          ? "glass shadow-soft-md"
+          : "bg-cream"
           }`}
       >
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
@@ -286,14 +282,6 @@ export default function Navbar() {
                 ))}
               </div>
               <div className="border-t border-light-gray px-6 py-4">
-                <Link
-                  href="/b2b"
-                  onClick={() => setMobileOpen(false)}
-                  className="flex w-full items-center justify-center gap-2 rounded-xl bg-navy px-4 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-navy/90"
-                >
-                  <Building2 className="h-4 w-4" />
-                  Bayi Girisi
-                </Link>
               </div>
             </motion.div>
           </>
