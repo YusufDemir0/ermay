@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
+
   basePath: '/ermay',
+  assetPrefix: '/ermay/',
+
   images: {
     unoptimized: true,
     remotePatterns: [
@@ -13,4 +16,3 @@ const nextConfig = {
 }
 
 export default nextConfig
-
